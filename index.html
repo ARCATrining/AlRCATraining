@@ -1,0 +1,1786 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة الرسالة للاستشارات والتدريب | Al-Risalah Consulting & Training</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'primary-dark': '#4c4bcc',
+                        'primary-light': '#7b7ae6',
+                        secondary: '#f8fafc',
+                        accent: '#fbbf24',
+                        'accent-dark': '#f59e0b',
+                        success: '#10b981',
+                        warning: '#f59e0b',
+                        danger: '#ef4444'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .ltr {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .dark .glass-effect {
+            background: rgba(31, 41, 55, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-primary {
+            background: linear-gradient(135deg, #5D5CDE 0%, #4c4bcc 100%);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            transition: transform 0.2s ease;
+        }
+
+        .service-card {
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #5D5CDE, #7b7ae6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Navigation Enhancement */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #5D5CDE;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #5D5CDE;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            transform: scaleX(1);
+        }
+
+        /* Enhanced Form Styles */
+        .form-input {
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 25px rgba(93, 92, 222, 0.15);
+        }
+
+        .shadow-custom {
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Pulse animation for CTA buttons */
+        .pulse-primary {
+            animation: pulse-primary 2s infinite;
+        }
+
+        @keyframes pulse-primary {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(93, 92, 222, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(93, 92, 222, 0);
+            }
+        }
+
+        /* Stats Counter Animation */
+        .counter {
+            transition: all 0.3s ease;
+        }
+
+        /* Form validation styles */
+        .input-error {
+            border-color: #ef4444 !important;
+            background-color: rgba(239, 68, 68, 0.05) !important;
+        }
+
+        .error-message {
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            .dark-auto {
+                color-scheme: dark;
+            }
+        }
+
+        /* Modal animations */
+        .modal-enter {
+            animation: modalEnter 0.3s ease-out;
+        }
+
+        @keyframes modalEnter {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-primary text-white p-2 rounded" id="skip-link">تخطي إلى المحتوى الرئيسي</a>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 glass-effect shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo and Company Name -->
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
+                        <img src="https://www2.0zz0.com/2025/08/24/06/638625136.jpeg">
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gradient" id="company-name">شركة الرسالة</h1>
+                        <p class="text-sm text-gray-600 dark:text-gray-400" id="company-subtitle">للاستشارات والتدريب</p>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <div class="hidden md:flex items-center space-x-8 space-x-reverse">
+                    <a href="#home" class="nav-link active" data-section="home" id="nav-home">الرئيسية</a>
+                    <a href="#about" class="nav-link" data-section="about" id="nav-about">من نحن</a>
+                    <a href="#services" class="nav-link" data-section="services" id="nav-services">خدماتنا</a>
+                    <a href="#team" class="nav-link" data-section="team" id="nav-team">فريق العمل</a>
+                    <a href="#contact" class="nav-link" data-section="contact" id="nav-contact">تواصل معنا</a>
+                </div>
+
+                <!-- Controls -->
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <!-- Language Toggle -->
+                    <button onclick="toggleLanguage()" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors font-medium">
+                        <i class="fas fa-language mr-2"></i>
+                        <span id="lang-toggle">EN</span>
+                    </button>
+                    
+                    <!-- Theme Toggle -->
+                    <button onclick="toggleTheme()" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                        <i class="fas fa-moon dark:hidden text-gray-700"></i>
+                        <i class="fas fa-sun hidden dark:inline text-yellow-400"></i>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                        <i class="fas fa-bars text-gray-700 dark:text-gray-300"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 rounded-lg mt-2 p-4 shadow-lg">
+                <div class="space-y-4">
+                    <a href="#home" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors" id="mobile-nav-home">الرئيسية</a>
+                    <a href="#about" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors" id="mobile-nav-about">من نحن</a>
+                    <a href="#services" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors" id="mobile-nav-services">خدماتنا</a>
+                    <a href="#team" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors" id="mobile-nav-team">فريق العمل</a>
+                    <a href="#contact" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors" id="mobile-nav-contact">تواصل معنا</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="gradient-primary text-white py-24">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <!-- Main Logo -->
+                    <div class="mb-8">
+                        <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto backdrop-blur-sm">
+                            <i class="fas fa-hard-hat text-4xl"></i>
+                        </div>
+                    </div>
+
+                    <!-- Main Heading -->
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight" id="hero-title">
+                        الريادة في السلامة والصحة المهنية
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="text-xl md:text-2xl mb-8 opacity-90 leading-relaxed" id="hero-subtitle">
+                        نقدم حلولاً متكاملة ومبتكرة في مجال الاستشارات والتدريب وخدمات الأمن لضمان بيئة عمل آمنة وصحية
+                    </p>
+
+                    <!-- Stats Section -->
+                    <div class="grid md:grid-cols-4 gap-6 mb-10">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                            <div class="text-3xl font-bold mb-2" id="stat-experience">14+</div>
+                            <p class="text-sm opacity-80" id="stat-experience-label">سنة خبرة</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                            <div class="text-3xl font-bold mb-2" id="stat-certifications">8+</div>
+                            <p class="text-sm opacity-80" id="stat-certifications-label">شهادات دولية</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                            <div class="text-3xl font-bold mb-2" id="stat-sectors">12+</div>
+                            <p class="text-sm opacity-80" id="stat-sectors-label">قطاعات متخصصة</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                            <div class="text-3xl font-bold mb-2" id="stat-support">24/7</div>
+                            <p class="text-sm opacity-80" id="stat-support-label">دعم مستمر</p>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button onclick="scrollToSection('services')" class="px-8 py-4 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-colors hover-lift pulse-primary">
+                            <i class="fas fa-rocket mr-2"></i>
+                            <span id="explore-services">استكشف خدماتنا</span>
+                        </button>
+                        <button onclick="scrollToSection('contact')" class="px-8 py-4 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors hover-lift">
+                            <i class="fas fa-phone mr-2"></i>
+                            <span id="contact-us">تواصل معنا</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-primary mb-4" id="about-title">من نحن</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white dark:bg-gray-700 rounded-xl p-8 shadow-lg mb-8">
+                        <h3 class="text-2xl font-bold text-primary mb-6 text-center" id="company-overview-title">الرسالة للاستشارات والتدريب</h3>
+                        <div class="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 leading-relaxed space-y-4" id="company-overview">
+                            <p>
+                                مؤسسة تدريبية واستشارية رائدة ومعتمدة من مركز أبوظبي للتعليم والتدريب التقني والمهني (ACTVET) ووزارة التربية والتعليم، بخبرة تتجاوز 14 عامًا في مجال الاستشارات والتدريب.
+                            </p>
+                            <p>
+                                نحن شركة متخصصة ومرخصة في السلامة والصحة المهنية والبيئة، ومعتمدة من جهات محلية ودولية مثل OSHAD وIOSH وHABC، وحاصلة على شهادات ISO 9001 وISO 14001 وOHSAS 18001.
+                            </p>
+                            <p>
+                                تقدّم الشركة خدماتها التدريبية والاستشارية بمستوى عالٍ من الجودة والاحترافية لقطاعات متعددة تشمل: الصناعة، الطاقة، النقل، البناء، الصحة، الأغذية، التعليم، السياحة، إدارة النفايات، النفط والغاز، والقطاع البحري، بالإضافة إلى القطاعين الحكومي والخاص داخل الإمارات وخارجها.
+                            </p>
+                            <p class="font-semibold text-primary">
+                                نتميز في الرسالة بنهج يركز على العميل من خلال الجودة، الالتزام، وسرعة الاستجابة، مما جعلنا خيارًا موثوقًا في الاستشارات والتدريب في الإمارات والشرق الأوسط.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Certifications and Accreditations -->
+                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-white dark:bg-gray-700 rounded-xl p-6 text-center shadow-lg hover-lift">
+                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-medal text-blue-600 text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2" id="cert-international">شهادات دولية</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400" id="cert-international-desc">OSHAD, IOSH, HABC</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-700 rounded-xl p-6 text-center shadow-lg hover-lift">
+                            <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-award text-green-600 text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2" id="cert-iso">شهادات الجودة</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400" id="cert-iso-desc">ISO 9001, 14001, OHSAS 18001</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-700 rounded-xl p-6 text-center shadow-lg hover-lift">
+                            <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-university text-purple-600 text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2" id="cert-local">اعتمادات محلية</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400" id="cert-local-desc">ACTVET, وزارة التربية والتعليم</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vision, Mission, Values -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Vision -->
+                    <div class="text-center p-8 bg-white dark:bg-gray-700 rounded-xl shadow-lg hover-lift">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-eye text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-primary" id="vision-title">رؤيتنا</h3>
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed" id="vision-desc">
+                            أن نكون الشركة الرائدة في دولة الإمارات العربية المتحدة في مجال السلامة والصحة المهنية والأمن
+                        </p>
+                    </div>
+
+                    <!-- Mission -->
+                    <div class="text-center p-8 bg-white dark:bg-gray-700 rounded-xl shadow-lg hover-lift">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-target text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-primary" id="mission-title">مهمتنا</h3>
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed" id="mission-desc">
+                            تقديم خدمات استشارية وتدريبية متميزة تساهم في رفع مستوى الوعي والأمان في بيئات العمل
+                        </p>
+                    </div>
+
+                    <!-- Values -->
+                    <div class="text-center p-8 bg-white dark:bg-gray-700 rounded-xl shadow-lg hover-lift">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-heart text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-primary" id="values-title">قيمنا</h3>
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed" id="values-desc">
+                            الشفافية، الجودة، الاحترافية، والالتزام بالمعايير الدولية في جميع خدماتنا
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-primary mb-4" id="services-title">خدماتنا</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed" id="services-description">
+                        نقدم مجموعة شاملة من الخدمات المتخصصة في السلامة والصحة المهنية والأمن مع ضمان الجودة والامتثال للمعايير الدولية
+                    </p>
+                </div>
+
+                <!-- Service Categories Grid -->
+                <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                    <!-- Consulting Services -->
+                    <div class="service-card bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-custom border-l-4 border-blue-500">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-clipboard-check text-blue-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-blue-600 mb-1" id="consulting-title">الاستشارات</h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm" id="consulting-subtitle">خدمات استشارية متخصصة</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-4" id="consulting-list">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                                <span>إعداد وتنفيذ أنظمة إدارة السلامة والصحة المهنية (ISO 45001)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                                <span>تقييم المخاطر المهنية ووضع خطط السيطرة عليها</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                                <span>إعداد سياسات وإجراءات السلامة والصحة المهنية</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                                <span>إعداد خطط الطوارئ والإخلاء وخطط الاستجابة للحوادث</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Training Services -->
+                    <div class="service-card bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-custom border-l-4 border-green-500">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-graduation-cap text-green-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-green-600 mb-1" id="training-title">التدريب</h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm" id="training-subtitle">برامج تدريبية معتمدة</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-4" id="training-list">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                                <span>دورات أساسية في السلامة والصحة المهنية</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                                <span>تدريب الإسعافات الأولية والإنعاش القلبي الرئوي (CPR)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                                <span>التدريب على مكافحة الحرائق وأنظمة الإنذار والإطفاء</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                                <span>تدريب العمل في الأماكن المحصورة</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Industries We Serve -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 mb-8">
+                    <h3 class="text-2xl font-bold text-center text-primary mb-8" id="industries-title">القطاعات التي نخدمها</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4" id="industries-grid">
+                        <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg hover-lift">
+                            <i class="fas fa-industry text-2xl text-primary mb-2"></i>
+                            <span class="text-sm text-center">الصناعة</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg hover-lift">
+                            <i class="fas fa-bolt text-2xl text-primary mb-2"></i>
+                            <span class="text-sm text-center">الطاقة</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg hover-lift">
+                            <i class="fas fa-truck text-2xl text-primary mb-2"></i>
+                            <span class="text-sm text-center">النقل</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg hover-lift">
+                            <i class="fas fa-hammer text-2xl text-primary mb-2"></i>
+                            <span class="text-sm text-center">البناء</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg hover-lift">
+                            <i class="fas fa-heartbeat text-2xl text-primary mb-2"></i>
+                            <span class="text-sm text-center">الصحة</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg hover-lift">
+                            <i class="fas fa-utensils text-2xl text-primary mb-2"></i>
+                            <span class="text-sm text-center">الأغذية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="py-20 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-primary mb-4" id="team-title">فريق العمل</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-xl text-gray-600 dark:text-gray-400" id="team-description">فريق من الخبراء المتخصصين في مجال السلامة والصحة المهنية</p>
+                </div>
+
+                <div class="max-w-md mx-auto">
+                    <!-- Training and Consulting Manager -->
+                    <div class="text-center bg-white dark:bg-gray-900 rounded-xl p-8 shadow-custom hover-lift">
+                        <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden shadow-lg">
+                            <img src="https://www2.0zz0.com/2025/07/27/13/975523908.jpg" alt="Safety Officer" class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-primary/20 shadow-2xl" 
+                                 alt="مسؤول التدريب والاستشارات" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold mb-2" id="team-manager-name">عبدالرحمن احمد عبدالرحمن نقدالله</h3>
+                        <p class="text-primary font-medium mb-4" id="team-manager-title">مسؤول التدريب والاستشارات</p>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6" id="team-manager-desc">
+                            خبير في مجال السلامة والصحة المهنية مع خبرة تزيد عن 15 سنة في تطوير وتنفيذ برامج التدريب والاستشارات المتخصصة
+                        </p>
+                        
+                        <!-- Contact Information -->
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center justify-center">
+                                <i class="fab fa-whatsapp text-green-500 mr-2"></i>
+                                <a href="https://wa.me/971564377323" class="text-green-600 hover:text-green-800 transition-colors">0564377323</a>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <i class="fas fa-phone text-blue-500 mr-2"></i>
+                                <a href="tel:+971552847411" class="text-blue-600 hover:text-blue-800 transition-colors">0552847411</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center space-x-4 space-x-reverse">
+                            <a href="https://wa.me/971564377323" class="text-green-600 hover:text-green-800 transition-colors">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </a>
+                            <a href="mailto:nfose2007@gmail.com" class="text-gray-600 hover:text-gray-800 transition-colors">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-primary mb-4" id="contact-title">تواصل معنا</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-xl text-gray-600 dark:text-gray-400" id="contact-description">
+                        نحن هنا لخدمتكم وتقديم أفضل الحلول لاحتياجاتكم في مجال السلامة والصحة المهنية
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Contact Information -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-8 text-primary" id="contact-info-title">معلومات التواصل</h3>
+                        
+                        <div class="space-y-6">
+                            <!-- Phone -->
+                            <div class="flex items-start bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-custom hover-lift">
+                                <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg mb-1" id="phone-label">الهاتف</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-2" id="phone-desc">للاستفسارات والحجوزات</p>
+                                    <p class="text-primary font-medium">0552847411</p>
+                                </div>
+                            </div>
+
+                            <!-- WhatsApp -->
+                            <div class="flex items-start bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-custom hover-lift">
+                                <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fab fa-whatsapp text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg mb-1" id="whatsapp-label">واتساب</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-2" id="whatsapp-desc">للتواصل السريع</p>
+                                    <a href="https://wa.me/971564377323" class="text-green-600 font-medium hover:text-green-800 transition-colors">0564377323</a>
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="flex items-start bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-custom hover-lift">
+                                <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg mb-1" id="email-label">البريد الإلكتروني</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-2" id="email-desc">للمراسلات الرسمية</p>
+                                    <a href="mailto:nfose2007@gmail.com" class="text-blue-600 font-medium hover:text-blue-800 transition-colors">nfose2007@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <!-- Address -->
+                            <div class="flex items-start bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-custom hover-lift">
+                                <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg mb-1" id="address-label">العنوان</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-2" id="address-desc">المقر الرئيسي</p>
+                                    <p class="text-purple-600 font-medium" id="address-text">
+                                        أبوظبي مصفح الصناعية<br>
+                                        دولة الإمارات العربية المتحدة
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map -->
+                        <div class="mt-8">
+                            <h4 class="text-lg font-semibold mb-4" id="map-title">موقعنا على الخريطة</h4>
+                            <div class="w-full h-64 bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3632.1089473684573!2d54.50445861445312!3d24.361496284382896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e45f1c5a8c6cd%3A0x1234567890abcdef!2sALFAHIM%20Group%20-%20%D9%85%D8%AC%D9%85%D9%88%D8%B9%D8%A9%20%D8%A7%D9%84%D9%81%D9%87%D9%8A%D9%85%2C%20Mussafah%20M5%2010th%20street%2C%20Musaffah%20M4%2C%20Abu%20Dhabi%2C%20UAE!5e0!3m2!1sar!2sae!4v1641234567890"
+                                    width="100%" 
+                                    height="100%" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    title="موقع شركة الرسالة - مجموعة الفهيم، مصفح الصناعية، أبوظبي">
+                                </iframe>
+                            </div>
+                            
+                            <!-- Map Link Button -->
+                            <div class="mt-4 text-center">
+                                <a href="https://maps.app.goo.gl/op5WKSRzk4NLvprH6" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer"
+                                   class="inline-flex items-center px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors shadow-md hover:shadow-lg">
+                                    <i class="fas fa-map-marker-alt mr-2"></i>
+                                    <span id="open-in-maps">فتح في خرائط جوجل</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div class="mt-8">
+                            <h4 class="text-lg font-semibold mb-4" id="social-title">تابعنا على</h4>
+                            <div class="flex space-x-4 space-x-reverse">
+                                <a href="#" class="w-12 h-12 bg-blue-600 text-white rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors hover-lift">
+                                    <i class="fab fa-facebook text-xl"></i>
+                                </a>
+                                <a href="https://wa.me/971564377323" class="w-12 h-12 bg-green-500 text-white rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors hover-lift">
+                                    <i class="fab fa-whatsapp text-xl"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 bg-black text-white rounded-lg flex items-center justify-center hover:bg-gray-800 transition-colors hover-lift">
+                                    <i class="fab fa-tiktok text-xl"></i>
+                                </a>
+                                <a href="mailto:nfose2007@gmail.com" class="w-12 h-12 bg-red-600 text-white rounded-lg flex items-center justify-center hover:bg-red-700 transition-colors hover-lift">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 shadow-custom">
+                        <h3 class="text-2xl font-bold mb-6 text-primary" id="quote-title">احصل على عرض سعر للدورة</h3>
+                        
+                        <!-- Contact Method Selection -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium mb-3 text-gray-700 dark:text-gray-300" id="contact-method-label">طريقة التواصل المفضلة *</label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <label class="flex items-center p-4 bg-white dark:bg-gray-700 rounded-lg border-2 border-gray-200 dark:border-gray-600 cursor-pointer hover:border-green-500 transition-colors">
+                                    <input type="radio" name="contactMethod" value="whatsapp" class="mr-3" checked onchange="updateContactMethod()">
+                                    <i class="fab fa-whatsapp text-green-500 mr-2"></i>
+                                    <span id="whatsapp-option">واتساب</span>
+                                </label>
+                                <label class="flex items-center p-4 bg-white dark:bg-gray-700 rounded-lg border-2 border-gray-200 dark:border-gray-600 cursor-pointer hover:border-blue-500 transition-colors">
+                                    <input type="radio" name="contactMethod" value="email" class="mr-3" onchange="updateContactMethod()">
+                                    <i class="fas fa-envelope text-blue-500 mr-2"></i>
+                                    <span id="email-option">بريد إلكتروني</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <form id="contact-form" class="space-y-6">
+                            <!-- Name and Email Row -->
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300" id="name-label">الاسم الكامل *</label>
+                                    <input type="text" id="name" name="name" required 
+                                           class="form-input w-full px-4 py-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 dark:text-white" 
+                                           placeholder="أدخل اسمك الكامل">
+                                    <div class="error-message hidden" id="name-error"></div>
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300" id="email-input-label">البريد الإلكتروني *</label>
+                                    <input type="email" id="email" name="email" required 
+                                           class="form-input w-full px-4 py-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 dark:text-white" 
+                                           placeholder="your.email@example.com">
+                                    <div class="error-message hidden" id="email-error"></div>
+                                </div>
+                            </div>
+
+                            <!-- Phone and Course Type Row -->
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300" id="phone-input-label">رقم الهاتف *</label>
+                                    <input type="tel" id="phone" name="phone" required 
+                                           class="form-input w-full px-4 py-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 dark:text-white" 
+                                           placeholder="+971 5X XXX XXXX">
+                                    <div class="error-message hidden" id="phone-error"></div>
+                                </div>
+                                <div>
+                                    <label for="courseType" class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300" id="course-type-label">نوع الدورة *</label>
+                                    <select id="courseType" name="courseType" required 
+                                            class="form-input w-full px-4 py-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 dark:text-white">
+                                        <!-- Options will be populated by JavaScript -->
+                                    </select>
+                                    <div class="error-message hidden" id="courseType-error"></div>
+                                </div>
+                            </div>
+
+                            <!-- Participants and Company -->
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="participants" class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300" id="participants-label">عدد المشاركين</label>
+                                    <input type="number" id="participants" name="participants" min="1" max="100"
+                                           class="form-input w-full px-4 py-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 dark:text-white" 
+                                           placeholder="عدد الأشخاص">
+                                </div>
+                                <div>
+                                    <label for="company" class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300" id="company-label">اسم الشركة/المؤسسة</label>
+                                    <input type="text" id="company" name="company" 
+                                           class="form-input w-full px-4 py-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 dark:text-white" 
+                                           placeholder="اسم الشركة (اختياري)">
+                                </div>
+                            </div>
+
+                            <!-- Training Preferences -->
+                            <div>
+                                <label for="trainingType" class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300" id="training-type-label">نوع التدريب المفضل</label>
+                                <select id="trainingType" name="trainingType" 
+                                        class="form-input w-full px-4 py-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 dark:text-white">
+                                    <!-- Options will be populated by JavaScript -->
+                                </select>
+                            </div>
+
+                            <!-- Message -->
+                            <div>
+                                <label for="message" class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300" id="message-label">تفاصيل إضافية</label>
+                                <textarea id="message" name="message" rows="4" 
+                                          class="form-input w-full px-4 py-3 text-base border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 dark:text-white resize-none" 
+                                          placeholder="أي متطلبات خاصة أو تفاصيل إضافية عن الدورة التدريبية..."></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="flex space-x-4 space-x-reverse">
+                                <button type="submit" class="flex-1 bg-primary text-white py-4 rounded-lg font-semibold hover:bg-primary-dark transition-colors hover-lift">
+                                    <i id="submit-icon" class="fab fa-whatsapp mr-2"></i>
+                                    <span id="submit-button">إرسال عبر واتساب</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <!-- Main Footer Content -->
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-4 space-x-reverse mb-6">
+                        <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold" id="footer-company-name">شركة الرسالة</h3>
+                            <p class="text-gray-400" id="footer-company-subtitle">للاستشارات والتدريب</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-6 max-w-md" id="footer-description">
+                        شركة رائدة في مجال السلامة والصحة المهنية والأمن، نقدم حلولاً متكاملة ومبتكرة لضمان بيئة عمل آمنة وصحية لجميع العاملين في مختلف القطاعات.
+                    </p>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://wa.me/971564377323" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="mailto:nfose2007@gmail.com" class="w-10 h-10 bg-gray-800 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Services Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6" id="footer-services-title">خدماتنا</h4>
+                    <ul class="space-y-3 text-gray-400" id="footer-services-list">
+                        <li><a href="#services" class="hover:text-white transition-colors hover:mr-2">الاستشارات</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors hover:mr-2">التدريب</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors hover:mr-2">تقييم المخاطر</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors hover:mr-2">الدعم الفني</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6" id="footer-contact-title">تواصل معنا</h4>
+                    <div class="space-y-3 text-gray-400">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-primary"></i>
+                            <span>0552847411</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-whatsapp mr-3 text-primary"></i>
+                            <span>0564377323</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-primary"></i>
+                            <span>nfose2007@gmail.com</span>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt mr-3 mt-1 text-primary"></i>
+                            <span id="footer-address">أبوظبي مصفح الصناعية، الإمارات العربية المتحدة</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-6">
+                    <p class="text-gray-400 mb-4 md:mb-0" id="footer-copyright">
+                        &copy; 2024 شركة الرسالة للاستشارات والتدريب. جميع الحقوق محفوظة.
+                    </p>
+                </div>
+                
+                <!-- Developer Info -->
+                <div class="border-t border-gray-800 pt-6">
+                    <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-4 md:space-x-reverse">
+                        <div class="flex items-center text-gray-400 text-sm">
+                            <i class="fas fa-code text-primary mr-2"></i>
+                            <span id="developed-by">تم التطوير من قبل</span>
+                        </div>
+                        <div class="flex items-center text-gray-300 text-sm font-medium">
+                            <i class="fas fa-user-tie text-primary mr-2"></i>
+                            <span id="developer-name">المهندس حسين نقد</span>
+                        </div>
+                        <div class="flex items-center text-gray-400 text-sm">
+                            <i class="fas fa-phone text-primary mr-2"></i>
+                            <a href="tel:+971524583193" class="hover:text-white transition-colors" id="developer-phone">+971524583193</a>
+                        </div>
+                        <div class="flex items-center">
+                            <a href="https://wa.me/971524583193" class="text-green-500 hover:text-green-400 transition-colors mr-2" title="تواصل عبر واتساب">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+971524583193" class="text-blue-500 hover:text-blue-400 transition-colors" title="اتصال مباشر">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary-dark transition-all duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Translations object
+        const translations = {
+            ar: {
+                // Navigation
+                'skip-link': 'تخطي إلى المحتوى الرئيسي',
+                'company-name': 'شركة الرسالة',
+                'company-subtitle': 'للاستشارات والتدريب',
+                'nav-home': 'الرئيسية',
+                'nav-about': 'من نحن',
+                'nav-services': 'خدماتنا',
+                'nav-team': 'فريق العمل',
+                'nav-contact': 'تواصل معنا',
+                'mobile-nav-home': 'الرئيسية',
+                'mobile-nav-about': 'من نحن',
+                'mobile-nav-services': 'خدماتنا',
+                'mobile-nav-team': 'فريق العمل',
+                'mobile-nav-contact': 'تواصل معنا',
+
+                // Hero Section
+                'hero-title': 'الريادة في السلامة والصحة المهنية',
+                'hero-subtitle': 'نقدم حلولاً متكاملة ومبتكرة في مجال الاستشارات والتدريب وخدمات الأمن لضمان بيئة عمل آمنة وصحية',
+                'stat-experience': '14+',
+                'stat-experience-label': 'سنة خبرة',
+                'stat-certifications': '8+',
+                'stat-certifications-label': 'شهادات دولية',
+                'stat-sectors': '12+',
+                'stat-sectors-label': 'قطاعات متخصصة',
+                'stat-support': '24/7',
+                'stat-support-label': 'دعم مستمر',
+                'explore-services': 'استكشف خدماتنا',
+                'contact-us': 'تواصل معنا',
+
+                // About Section
+                'about-title': 'من نحن',
+                'company-overview-title': 'الرسالة للاستشارات والتدريب',
+                'cert-international': 'شهادات دولية',
+                'cert-international-desc': 'OSHAD, IOSH, HABC',
+                'cert-iso': 'شهادات الجودة',
+                'cert-iso-desc': 'ISO 9001, 14001, OHSAS 18001',
+                'cert-local': 'اعتمادات محلية',
+                'cert-local-desc': 'ACTVET, وزارة التربية والتعليم',
+                'vision-title': 'رؤيتنا',
+                'vision-desc': 'أن نكون الشركة الرائدة في دولة الإمارات العربية المتحدة في مجال السلامة والصحة المهنية والأمن',
+                'mission-title': 'مهمتنا',
+                'mission-desc': 'تقديم خدمات استشارية وتدريبية متميزة تساهم في رفع مستوى الوعي والأمان في بيئات العمل',
+                'values-title': 'قيمنا',
+                'values-desc': 'الشفافية، الجودة، الاحترافية، والالتزام بالمعايير الدولية في جميع خدماتنا',
+
+                // Services Section
+                'services-title': 'خدماتنا',
+                'services-description': 'نقدم مجموعة شاملة من الخدمات المتخصصة في السلامة والصحة المهنية والأمن مع ضمان الجودة والامتثال للمعايير الدولية',
+                'consulting-title': 'الاستشارات',
+                'consulting-subtitle': 'خدمات استشارية متخصصة',
+                'training-title': 'التدريب',
+                'training-subtitle': 'برامج تدريبية معتمدة',
+                'industries-title': 'القطاعات التي نخدمها',
+
+                // Team Section
+                'team-title': 'فريق العمل',
+                'team-description': 'فريق من الخبراء المتخصصين في مجال السلامة والصحة المهنية',
+                'team-manager-name': 'عبدالرحمن احمد عبدالرحمن نقدالله',
+                'team-manager-title': 'مسؤول التدريب والاستشارات',
+                'team-manager-desc': 'خبير في مجال السلامة والصحة المهنية مع خبرة تزيد عن 5 سنة في تطوير وتنفيذ برامج التدريب والاستشارات المتخصصة',
+
+                // Contact Section
+                'contact-title': 'تواصل معنا',
+                'contact-description': 'نحن هنا لخدمتكم وتقديم أفضل الحلول لاحتياجاتكم في مجال السلامة والصحة المهنية',
+                'contact-info-title': 'معلومات التواصل',
+                'phone-label': 'الهاتف',
+                'phone-desc': 'للاستفسارات والحجوزات',
+                'whatsapp-label': 'واتساب',
+                'whatsapp-desc': 'للتواصل السريع',
+                'email-label': 'البريد الإلكتروني',
+                'email-desc': 'للمراسلات الرسمية',
+                'address-label': 'العنوان',
+                'address-desc': 'المقر الرئيسي',
+                'address-text': 'أبوظبي مصفح الصناعية<br>دولة الإمارات العربية المتحدة',
+                'map-title': 'موقعنا على الخريطة',
+                'social-title': 'تابعنا على',
+
+                // Form
+                'quote-title': 'احصل على عرض سعر للدورة',
+                'contact-method-label': 'طريقة التواصل المفضلة *',
+                'whatsapp-option': 'واتساب',
+                'email-option': 'بريد إلكتروني',
+                'name-label': 'الاسم الكامل *',
+                'email-input-label': 'البريد الإلكتروني *',
+                'phone-input-label': 'رقم الهاتف *',
+                'course-type-label': 'نوع الدورة *',
+                'participants-label': 'عدد المشاركين',
+                'company-label': 'اسم الشركة/المؤسسة',
+                'training-type-label': 'نوع التدريب المفضل',
+                'message-label': 'تفاصيل إضافية',
+                'submit-button': 'إرسال عبر واتساب',
+
+                // Footer
+                'footer-company-name': 'شركة الرسالة',
+                'footer-company-subtitle': 'للاستشارات والتدريب',
+                'footer-description': 'شركة رائدة في مجال السلامة والصحة المهنية والأمن، نقدم حلولاً متكاملة ومبتكرة لضمان بيئة عمل آمنة وصحية لجميع العاملين في مختلف القطاعات.',
+                'footer-services-title': 'خدماتنا',
+                'footer-contact-title': 'تواصل معنا',
+                'footer-address': 'أبوظبي مصفح الصناعية، الإمارات العربية المتحدة',
+                'footer-copyright': '© 2024 شركة الرسالة للاستشارات والتدريب. جميع الحقوق محفوظة.',
+                
+                // Map
+                'open-in-maps': 'فتح في خرائط جوجل',
+
+                // Developer Info
+                'developed-by': 'تم التطوير من قبل',
+                'developer-name': 'المهندس حسين نقد',
+                'developer-phone': '+971524583193'
+            },
+            en: {
+                // Navigation
+                'skip-link': 'Skip to main content',
+                'company-name': 'Al-Risalah Company',
+                'company-subtitle': 'Consulting & Training',
+                'nav-home': 'Home',
+                'nav-about': 'About Us',
+                'nav-services': 'Our Services',
+                'nav-team': 'Our Team',
+                'nav-contact': 'Contact Us',
+                'mobile-nav-home': 'Home',
+                'mobile-nav-about': 'About Us',
+                'mobile-nav-services': 'Our Services',
+                'mobile-nav-team': 'Our Team',
+                'mobile-nav-contact': 'Contact Us',
+
+                // Hero Section
+                'hero-title': 'Leading in Occupational Health & Safety',
+                'hero-subtitle': 'We provide comprehensive and innovative solutions in consulting, training, and security services to ensure a safe and healthy work environment',
+                'stat-experience': '14+',
+                'stat-experience-label': 'Years Experience',
+                'stat-certifications': '8+',
+                'stat-certifications-label': 'International Certifications',
+                'stat-sectors': '12+',
+                'stat-sectors-label': 'Specialized Sectors',
+                'stat-support': '24/7',
+                'stat-support-label': 'Continuous Support',
+                'explore-services': 'Explore Our Services',
+                'contact-us': 'Contact Us',
+
+                // About Section
+                'about-title': 'About Us',
+                'company-overview-title': 'Al-Risalah Consulting & Training',
+                'cert-international': 'International Certifications',
+                'cert-international-desc': 'OSHAD, IOSH, HABC',
+                'cert-iso': 'Quality Certifications',
+                'cert-iso-desc': 'ISO 9001, 14001, OHSAS 18001',
+                'cert-local': 'Local Accreditations',
+                'cert-local-desc': 'ACTVET, Ministry of Education',
+                'vision-title': 'Our Vision',
+                'vision-desc': 'To be the leading company in the United Arab Emirates in the field of occupational health, safety, and security',
+                'mission-title': 'Our Mission',
+                'mission-desc': 'Providing exceptional consulting and training services that contribute to raising awareness and safety levels in work environments',
+                'values-title': 'Our Values',
+                'values-desc': 'Transparency, quality, professionalism, and commitment to international standards in all our services',
+
+                // Services Section
+                'services-title': 'Our Services',
+                'services-description': 'We offer a comprehensive range of specialized services in occupational health, safety, and security with quality assurance and compliance to international standards',
+                'consulting-title': 'Consulting',
+                'consulting-subtitle': 'Specialized consulting services',
+                'training-title': 'Training',
+                'training-subtitle': 'Certified training programs',
+                'industries-title': 'Industries We Serve',
+
+                // Team Section
+                'team-title': 'Our Team',
+                'team-description': 'A team of experts specialized in occupational health and safety',
+                'team-manager-name': 'Abdulrahman Ahmed Abdelrahman Nuggedalla',
+                'team-manager-title': 'Training & Consulting Manager',
+                'team-manager-desc': 'Expert in occupational health and safety with over 15 years of experience in developing and implementing specialized training and consulting programs',
+
+                // Contact Section
+                'contact-title': 'Contact Us',
+                'contact-description': 'We are here to serve you and provide the best solutions for your occupational health and safety needs',
+                'contact-info-title': 'Contact Information',
+                'phone-label': 'Phone',
+                'phone-desc': 'For inquiries and bookings',
+                'whatsapp-label': 'WhatsApp',
+                'whatsapp-desc': 'For quick communication',
+                'email-label': 'Email',
+                'email-desc': 'For official correspondence',
+                'address-label': 'Address',
+                'address-desc': 'Head Office',
+                'address-text': 'Abu Dhabi Musaffah Industrial<br>United Arab Emirates',
+                'map-title': 'Our Location on Map',
+                'social-title': 'Follow Us',
+
+                // Form
+                'quote-title': 'Get Course Price Quote',
+                'contact-method-label': 'Preferred Contact Method *',
+                'whatsapp-option': 'WhatsApp',
+                'email-option': 'Email',
+                'name-label': 'Full Name *',
+                'email-input-label': 'Email Address *',
+                'phone-input-label': 'Phone Number *',
+                'course-type-label': 'Course Type *',
+                'participants-label': 'Number of Participants',
+                'company-label': 'Company/Organization Name',
+                'training-type-label': 'Preferred Training Type',
+                'message-label': 'Additional Details',
+                'submit-button': 'Send via WhatsApp',
+
+                // Footer
+                'footer-company-name': 'Al-Risalah Company',
+                'footer-company-subtitle': 'Consulting & Training',
+                'footer-description': 'A leading company in occupational health, safety, and security, providing comprehensive and innovative solutions to ensure a safe and healthy work environment for all workers in various sectors.',
+                'footer-services-title': 'Our Services',
+                'footer-contact-title': 'Contact Us',
+                'footer-address': 'Abu Dhabi Musaffah Industrial, United Arab Emirates',
+                'footer-copyright': '© 2025 Al-Risalah Consulting & Training Company. All rights reserved.',
+                
+                // Map
+                'open-in-maps': 'Open in Google Maps',
+
+                // Developer Info
+                'developed-by': 'Developed by',
+                'developer-name': 'Engineer Hussein Naqad',
+                'developer-phone': '+971524583193'
+            }
+        };
+
+        // Form options data
+        const formOptions = {
+            ar: {
+                courseTypes: [
+                    { value: '', text: 'اختر نوع الدورة' },
+                    { value: 'occupational-safety', text: 'السلامة والصحة المهنية الأساسية' },
+                    { value: 'first-aid', text: 'الإسعافات الأولية و CPR' },
+                    { value: 'fire-safety', text: 'مكافحة الحرائق' },
+                    { value: 'confined-space', text: 'العمل في الأماكن المحصورة' },
+                    { value: 'risk-assessment', text: 'تقييم المخاطر' },
+                    { value: 'iso-45001', text: 'نظام إدارة السلامة ISO 45001' },
+                    { value: 'emergency-response', text: 'الاستجابة للطوارئ' },
+                    { value: 'custom', text: 'دورة مخصصة' }
+                ],
+                trainingTypes: [
+                    { value: '', text: 'اختر نوع التدريب' },
+                    { value: 'onsite', text: 'في موقع العمل' },
+                    { value: 'center', text: 'في مركز التدريب' },
+                    { value: 'online', text: 'عبر الإنترنت' },
+                    { value: 'hybrid', text: 'مختلط (حضوري وإلكتروني)' }
+                ]
+            },
+            en: {
+                courseTypes: [
+                    { value: '', text: 'Select Course Type' },
+                    { value: 'occupational-safety', text: 'Basic Occupational Health & Safety' },
+                    { value: 'first-aid', text: 'First Aid & CPR' },
+                    { value: 'fire-safety', text: 'Fire Safety' },
+                    { value: 'confined-space', text: 'Confined Space Work' },
+                    { value: 'risk-assessment', text: 'Risk Assessment' },
+                    { value: 'iso-45001', text: 'ISO 45001 Safety Management System' },
+                    { value: 'emergency-response', text: 'Emergency Response' },
+                    { value: 'custom', text: 'Custom Course' }
+                ],
+                trainingTypes: [
+                    { value: '', text: 'Select Training Type' },
+                    { value: 'onsite', text: 'On-site Training' },
+                    { value: 'center', text: 'Training Center' },
+                    { value: 'online', text: 'Online Training' },
+                    { value: 'hybrid', text: 'Hybrid (In-person & Online)' }
+                ]
+            }
+        };
+
+        // Validation messages
+        const validationMessages = {
+            ar: {
+                required: 'هذا الحقل مطلوب',
+                email: 'يرجى إدخال بريد إلكتروني صحيح',
+                phone: 'يرجى إدخال رقم هاتف صحيح',
+                minLength: 'يجب أن يحتوي على 3 أحرف على الأقل'
+            },
+            en: {
+                required: 'This field is required',
+                email: 'Please enter a valid email address',
+                phone: 'Please enter a valid phone number',
+                minLength: 'Must contain at least 3 characters'
+            }
+        };
+
+        // Dark mode initialization
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Theme Management
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+        }
+
+        // Language Management
+        let currentLang = 'ar';
+
+        function updateTexts() {
+            const langData = translations[currentLang];
+            
+            // Update all translatable elements
+            Object.keys(langData).forEach(key => {
+                const element = document.getElementById(key);
+                if (element) {
+                    if (key.includes('-desc') && langData[key].includes('<br>')) {
+                        element.innerHTML = langData[key];
+                    } else {
+                        element.textContent = langData[key];
+                    }
+                }
+            });
+
+            // Update company overview content (special case)
+            updateCompanyOverview();
+            // Update lists content
+            updateListsContent();
+            // Update form options
+            updateFormOptions();
+            // Update form placeholders
+            updateFormPlaceholders();
+        }
+
+        function updateCompanyOverview() {
+            const companyOverview = document.getElementById('company-overview');
+            if (companyOverview) {
+                if (currentLang === 'en') {
+                    companyOverview.innerHTML = `
+                        <p>
+                            <strong>Al-Risalah Consulting & Training</strong> is a premier training and consulting institution, officially accredited by the Abu Dhabi Centre for Technical and Vocational Education and Training (ACTVET) and the Ministry of Education. With over 14 years of distinguished experience, we have established ourselves as industry leaders in providing comprehensive consulting and training solutions.
+                        </p>
+                        <p>
+                            As a specialized and fully licensed organization in occupational health, safety, and environmental management, we maintain prestigious accreditations from both local and international regulatory bodies. Our certifications include endorsements from OSHAD (Abu Dhabi Occupational Safety and Health Centre), IOSH (Institution of Occupational Safety and Health), and HABC (Highfield Awarding Body for Compliance), alongside our quality management certifications: ISO 9001 (Quality Management), ISO 14001 (Environmental Management), and OHSAS 18001 (Occupational Health and Safety Management).
+                        </p>
+                        <p>
+                            Our organization delivers exceptional training and consulting services with uncompromising quality and professionalism across diverse industry sectors. We proudly serve: industrial manufacturing, energy and utilities, transportation and logistics, construction and infrastructure, healthcare and pharmaceuticals, food and beverage, education and academia, tourism and hospitality, waste management and recycling, oil and gas exploration, and marine and offshore operations. Our expertise extends to both government institutions and private enterprises throughout the United Arab Emirates and the broader Middle East region.
+                        </p>
+                        <p class="font-semibold text-primary">
+                            At Al-Risalah, we distinguish ourselves through our unwavering commitment to client-centric excellence, demonstrated through our pillars of superior quality, steadfast commitment, and rapid responsiveness. This approach has solidified our position as the most trusted and reliable partner for occupational health and safety consulting and training solutions in the UAE and across the Middle East region.
+                        </p>
+                    `;
+                } else {
+                    companyOverview.innerHTML = `
+                        <p>
+                            مؤسسة تدريبية واستشارية رائدة ومعتمدة من مركز أبوظبي للتعليم والتدريب التقني والمهني (ACTVET) ووزارة التربية والتعليم، بخبرة تتجاوز 14 عامًا في مجال الاستشارات والتدريب.
+                        </p>
+                        <p>
+                            نحن شركة متخصصة ومرخصة في السلامة والصحة المهنية والبيئة، ومعتمدة من جهات محلية ودولية مثل OSHAD وIOSH وHABC، وحاصلة على شهادات ISO 9001 وISO 14001 وOHSAS 18001.
+                        </p>
+                        <p>
+                            تقدّم الشركة خدماتها التدريبية والاستشارية بمستوى عالٍ من الجودة والاحترافية لقطاعات متعددة تشمل: الصناعة، الطاقة، النقل، البناء، الصحة، الأغذية، التعليم، السياحة، إدارة النفايات، النفط والغاز، والقطاع البحري، بالإضافة إلى القطاعين الحكومي والخاص داخل الإمارات وخارجها.
+                        </p>
+                        <p class="font-semibold text-primary">
+                            نتميز في الرسالة بنهج يركز على العميل من خلال الجودة، الالتزام، وسرعة الاستجابة، مما جعلنا خيارًا موثوقًا في الاستشارات والتدريب في الإمارات والشرق الأوسط.
+                        </p>
+                    `;
+                }
+            }
+        }
+
+        function updateListsContent() {
+            const consultingList = document.getElementById('consulting-list');
+            const trainingList = document.getElementById('training-list');
+            const industriesGrid = document.getElementById('industries-grid');
+
+            if (currentLang === 'en') {
+                if (consultingList) {
+                    consultingList.innerHTML = `
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                            <span>Developing and implementing occupational health and safety management systems (ISO 45001)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                            <span>Occupational risk assessment and control plans development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                            <span>Preparing occupational health and safety policies and procedures</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                            <span>Preparing emergency evacuation plans and incident response plans</span>
+                        </li>
+                    `;
+                }
+
+                if (trainingList) {
+                    trainingList.innerHTML = `
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                            <span>Basic occupational health and safety courses</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                            <span>First aid and CPR training</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                            <span>Fire fighting and alarm systems training</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                            <span>Confined space work training</span>
+                        </li>
+                    `;
+                }
+
+                if (industriesGrid) {
+                    industriesGrid.innerHTML = `
+                        <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg hover-lift">
+                            <i class="fas fa-industry text-2xl text-primary mb-2"></i>
+                            <span class="text-sm text-center">Industry</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg hover-lift">
+                            <i class="fas fa-bolt text-2xl text-primary mb-2"></i>
+                            <span class="text-sm text-center">Energy</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg hover-lift">
+                            <i class="fas fa-truck text-2xl text-primary mb-2"></i>
+                            <span class="text-sm text-center">Transportation</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg hover-lift">
+                            <i class="fas fa-hammer text-2xl text-primary mb-2"></i>
+                            <span class="text-sm text-center">Construction</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg hover-lift">
+                            <i class="fas fa-heartbeat text-2xl text-primary mb-2"></i>
+                            <span class="text-sm text-center">Healthcare</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg hover-lift">
+                            <i class="fas fa-utensils text-2xl text-primary mb-2"></i>
+                            <span class="text-sm text-center">Food</span>
+                        </div>
+                    `;
+                }
+            } else {
+                // Reset to Arabic content
+                if (consultingList) {
+                    consultingList.innerHTML = `
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                            <span>إعداد وتنفيذ أنظمة إدارة السلامة والصحة المهنية (ISO 45001)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                            <span>تقييم المخاطر المهنية ووضع خطط السيطرة عليها</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                            <span>إعداد سياسات وإجراءات السلامة والصحة المهنية</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                            <span>إعداد خطط الطوارئ والإخلاء وخطط الاستجابة للحوادث</span>
+                        </li>
+                    `;
+                }
+
+                if (trainingList) {
+                    trainingList.innerHTML = `
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                            <span>دورات أساسية في السلامة والصحة المهنية</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                            <span>تدريب الإسعافات الأولية والإنعاش القلبي الرئوي (CPR)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                            <span>التدريب على مكافحة الحرائق وأنظمة الإنذار والإطفاء</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                            <span>تدريب العمل في الأماكن المحصورة</span>
+                        </li>
+                    `;
+                }
+
+                if (industriesGrid) {
+                    industriesGrid.innerHTML = `
+                        <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg hover-lift">
+                            <i class="fas fa-industry text-2xl text-primary mb-2"></i>
+                            <span class="text-sm text-center">الصناعة</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg hover-lift">
+                            <i class="fas fa-bolt text-2xl text-primary mb-2"></i>
+                            <span class="text-sm text-center">الطاقة</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg hover-lift">
+                            <i class="fas fa-truck text-2xl text-primary mb-2"></i>
+                            <span class="text-sm text-center">النقل</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg hover-lift">
+                            <i class="fas fa-hammer text-2xl text-primary mb-2"></i>
+                            <span class="text-sm text-center">البناء</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg hover-lift">
+                            <i class="fas fa-heartbeat text-2xl text-primary mb-2"></i>
+                            <span class="text-sm text-center">الصحة</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg hover-lift">
+                            <i class="fas fa-utensils text-2xl text-primary mb-2"></i>
+                            <span class="text-sm text-center">الأغذية</span>
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        function updateFormOptions() {
+            const courseTypeSelect = document.getElementById('courseType');
+            const trainingTypeSelect = document.getElementById('trainingType');
+            
+            if (courseTypeSelect) {
+                courseTypeSelect.innerHTML = '';
+                formOptions[currentLang].courseTypes.forEach(option => {
+                    const optionElement = document.createElement('option');
+                    optionElement.value = option.value;
+                    optionElement.textContent = option.text;
+                    courseTypeSelect.appendChild(optionElement);
+                });
+            }
+
+            if (trainingTypeSelect) {
+                trainingTypeSelect.innerHTML = '';
+                formOptions[currentLang].trainingTypes.forEach(option => {
+                    const optionElement = document.createElement('option');
+                    optionElement.value = option.value;
+                    optionElement.textContent = option.text;
+                    trainingTypeSelect.appendChild(optionElement);
+                });
+            }
+        }
+
+        function updateFormPlaceholders() {
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const phoneInput = document.getElementById('phone');
+            const participantsInput = document.getElementById('participants');
+            const companyInput = document.getElementById('company');
+            const messageTextarea = document.getElementById('message');
+
+            if (currentLang === 'en') {
+                if (nameInput) nameInput.placeholder = 'Enter your full name';
+                if (emailInput) emailInput.placeholder = 'your.email@example.com';
+                if (phoneInput) phoneInput.placeholder = '+971 5X XXX XXXX';
+                if (participantsInput) participantsInput.placeholder = 'Number of people';
+                if (companyInput) companyInput.placeholder = 'Company name (optional)';
+                if (messageTextarea) messageTextarea.placeholder = 'Any special requirements or additional details about the training course...';
+            } else {
+                if (nameInput) nameInput.placeholder = 'أدخل اسمك الكامل';
+                if (emailInput) emailInput.placeholder = 'your.email@example.com';
+                if (phoneInput) phoneInput.placeholder = '+971 5X XXX XXXX';
+                if (participantsInput) participantsInput.placeholder = 'عدد الأشخاص';
+                if (companyInput) companyInput.placeholder = 'اسم الشركة (اختياري)';
+                if (messageTextarea) messageTextarea.placeholder = 'أي متطلبات خاصة أو تفاصيل إضافية عن الدورة التدريبية...';
+            }
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.getElementById('lang-toggle').textContent = currentLang === 'ar' ? 'EN' : 'AR';
+            
+            if (currentLang === 'en') {
+                document.body.classList.add('ltr');
+            } else {
+                document.body.classList.remove('ltr');
+            }
+
+            updateTexts();
+        }
+
+        // Mobile Menu Management
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Contact Method Management
+        function updateContactMethod() {
+            const whatsappRadio = document.querySelector('input[name="contactMethod"][value="whatsapp"]');
+            const emailRadio = document.querySelector('input[name="contactMethod"][value="email"]');
+            const submitButton = document.getElementById('submit-button');
+            const submitIcon = document.getElementById('submit-icon');
+
+            if (whatsappRadio.checked) {
+                submitButton.textContent = currentLang === 'ar' ? 'إرسال عبر واتساب' : 'Send via WhatsApp';
+                submitIcon.className = 'fab fa-whatsapp mr-2';
+            } else if (emailRadio.checked) {
+                submitButton.textContent = currentLang === 'ar' ? 'إرسال عبر الإيميل' : 'Send via Email';
+                submitIcon.className = 'fas fa-envelope mr-2';
+            }
+        }
+
+        // Form Validation
+        function validateField(field, value) {
+            const fieldName = field.name;
+            const messages = validationMessages[currentLang];
+            
+            // Clear previous errors
+            clearFieldError(field);
+            
+            // Required field validation
+            if (field.required && (!value || value.trim() === '')) {
+                showFieldError(field, messages.required);
+                return false;
+            }
+            
+            // Email validation
+            if (fieldName === 'email' && value) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(value)) {
+                    showFieldError(field, messages.email);
+                    return false;
+                }
+            }
+            
+            // Phone validation
+            if (fieldName === 'phone' && value) {
+                const phoneRegex = /^[\+]?[\d\s\-\(\)]{8,15}$/;
+                if (!phoneRegex.test(value)) {
+                    showFieldError(field, messages.phone);
+                    return false;
+                }
+            }
+            
+            // Minimum length validation
+            if (fieldName === 'name' && value && value.trim().length < 3) {
+                showFieldError(field, messages.minLength);
+                return false;
+            }
+            
+            return true;
+        }
+
+        function showFieldError(field, message) {
+            field.classList.add('input-error');
+            const errorElement = document.getElementById(field.name + '-error') || document.getElementById(field.id + '-error');
+            if (errorElement) {
+                errorElement.textContent = message;
+                errorElement.classList.remove('hidden');
+            }
+        }
+
+        function clearFieldError(field) {
+            field.classList.remove('input-error');
+            const errorElement = document.getElementById(field.name + '-error') || document.getElementById(field.id + '-error');
+            if (errorElement) {
+                errorElement.textContent = '';
+                errorElement.classList.add('hidden');
+            }
+        }
+
+        // Smooth Scrolling
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Navigation Active State
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-section') === current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Back to Top Button
+        function toggleBackToTop() {
+            const backToTop = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+            }
+        }
+
+        // Enhanced Modal System
+        function showModal(title, message, type = 'success') {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+            
+            const iconClass = type === 'success' ? 'fas fa-check text-green-600' : 
+                             type === 'error' ? 'fas fa-times text-red-600' : 
+                             'fas fa-info text-blue-600';
+            
+            const bgClass = type === 'success' ? 'bg-green-100 dark:bg-green-900' : 
+                           type === 'error' ? 'bg-red-100 dark:bg-red-900' : 
+                           'bg-blue-100 dark:bg-blue-900';
+            
+            const buttonText = currentLang === 'ar' ? 'حسناً' : 'OK';
+
+            modal.innerHTML = `
+                <div class="modal-enter bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg max-w-md w-full mx-4 text-center">
+                    <div class="w-16 h-16 ${bgClass} rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="${iconClass} text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">
+                        ${title}
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">
+                        ${message}
+                    </p>
+                    <button onclick="this.closest('.fixed').remove()" class="px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">
+                        ${buttonText}
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+            
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                if (modal.parentNode) {
+                    modal.remove();
+                }
+            }, 5000);
+        }
+
+        // Form Handling with validation
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const contactMethod = document.querySelector('input[name="contactMethod"]:checked').value;
+            
+            // Validate all required fields
+            const requiredFields = ['name', 'email', 'phone', 'courseType'];
+            let isValid = true;
+            
+            requiredFields.forEach(fieldName => {
+                const field = document.getElementById(fieldName);
+                const value = formData.get(fieldName);
+                if (!validateField(field, value)) {
+                    isValid = false;
+                }
+            });
+            
+            if (!isValid) {
+                const errorMessage = currentLang === 'ar' 
+                    ? 'يرجى تصحيح الأخطاء في النموذج'
+                    : 'Please correct the errors in the form';
+                showModal(
+                    currentLang === 'ar' ? 'خطأ في النموذج' : 'Form Error',
+                    errorMessage,
+                    'error'
+                );
+                return;
+            }
+            
+            // Get form data
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const courseType = formData.get('courseType');
+            const participants = formData.get('participants');
+            const company = formData.get('company');
+            const trainingType = formData.get('trainingType');
+            const message = formData.get('message');
+
+            // Create message text
+            let messageText = currentLang === 'ar' 
+                ? `طلب عرض سعر للدورة التدريبية\n\n`
+                : `Training Course Price Quote Request\n\n`;
+            
+            const labels = currentLang === 'ar' 
+                ? {
+                    name: 'الاسم',
+                    email: 'الإيميل',
+                    phone: 'الهاتف',
+                    courseType: 'نوع الدورة',
+                    participants: 'عدد المشاركين',
+                    company: 'الشركة',
+                    trainingType: 'نوع التدريب',
+                    message: 'تفاصيل إضافية'
+                }
+                : {
+                    name: 'Name',
+                    email: 'Email',
+                    phone: 'Phone',
+                    courseType: 'Course Type',
+                    participants: 'Participants',
+                    company: 'Company',
+                    trainingType: 'Training Type',
+                    message: 'Additional Details'
+                };
+
+            messageText += `${labels.name}: ${name}\n`;
+            messageText += `${labels.email}: ${email}\n`;
+            messageText += `${labels.phone}: ${phone}\n`;
+            if (courseType) messageText += `${labels.courseType}: ${courseType}\n`;
+            if (participants) messageText += `${labels.participants}: ${participants}\n`;
+            if (company) messageText += `${labels.company}: ${company}\n`;
+            if (trainingType) messageText += `${labels.trainingType}: ${trainingType}\n`;
+            if (message) messageText += `${labels.message}: ${message}\n`;
+
+            try {
+                if (contactMethod === 'whatsapp') {
+                    // Send via WhatsApp
+                    const whatsappUrl = `https://wa.me/971564377323?text=${encodeURIComponent(messageText)}`;
+                    window.open(whatsappUrl, '_blank');
+                } else {
+                    // Send via Email
+                    const subject = currentLang === 'ar' 
+                        ? 'طلب عرض سعر للدورة التدريبية'
+                        : 'Training Course Price Quote Request';
+                    const emailUrl = `mailto:nfose2007@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(messageText)}`;
+                    window.location.href = emailUrl;
+                }
+
+                const successTitle = contactMethod === 'whatsapp' 
+                    ? (currentLang === 'ar' ? 'تم الإرسال عبر واتساب!' : 'Sent via WhatsApp!')
+                    : (currentLang === 'ar' ? 'تم الإرسال عبر الإيميل!' : 'Sent via Email!');
+                
+                const successMessage = currentLang === 'ar' 
+                    ? 'شكراً لتواصلكم معنا. سنقوم بالرد عليكم في أقرب وقت ممكن.'
+                    : 'Thank you for contacting us. We will respond to you as soon as possible.';
+
+                showModal(successTitle, successMessage, 'success');
+                event.target.reset();
+            } catch (error) {
+                const errorTitle = currentLang === 'ar' ? 'خطأ في الإرسال' : 'Sending Error';
+                const errorMessage = currentLang === 'ar' 
+                    ? 'حدث خطأ أثناء إرسال الرسالة. يرجى المحاولة مرة أخرى.'
+                    : 'An error occurred while sending the message. Please try again.';
+                showModal(errorTitle, errorMessage, 'error');
+            }
+        }
+
+        // Event Listeners
+        window.addEventListener('scroll', () => {
+            updateActiveNavLink();
+            toggleBackToTop();
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', handleFormSubmit);
+
+        // Real-time validation
+        document.addEventListener('input', (e) => {
+            if (e.target.form && e.target.form.id === 'contact-form') {
+                validateField(e.target, e.target.value);
+            }
+        });
+
+        // Navigation clicks
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+                
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            updateActiveNavLink();
+            updateContactMethod();
+            updateFormOptions();
+            updateFormPlaceholders();
+            
+            // Initialize theme from storage
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+            
+            // Initial text update
+            updateTexts();
+        });
+    </script>
+</body>
+</html>
